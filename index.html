@@ -3,281 +3,111 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mikalojus Konstantinas Čiurlionis – menininkas ir kompozitorius</title>
-  <meta name="description" content="Vieno failo svetainė apie Mikalojų Konstantiną Čiurlionį – Lietuvos dailininką ir kompozitorių: biografija, kūryba, darbų galerija." />
-  <meta property="og:title" content="M. K. Čiurlionis – menininkas ir kompozitorius" />
-  <meta property="og:description" content="Biografija, kūryba, darbų galerija ir šaltiniai." />
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <title>Mikalojus Konstantinas Čiurlionis</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg: #0b1020;           /* nakties mėlyna */
-      --bg-soft: #121a35;      /* kortelėms */
-      --text:#e5e7eb;          /* šviesus tekstas */
-      --muted:#9ca3af;         /* antraštėms */
-      --brand:#8ab4ff;         /* akcentas */
-      --brand-2:#c084fc;       /* antras akcentas */
-      --ring: rgba(138,180,255,.35);
+      --bg:#000;
+      --txt:#e9e9e9;
+      --muted:#bdbdbd;
+      --accent:#333;
+      --card:#0b0b0b;
+      --radius:18px;
+      --maxw:1100px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      color:var(--text); background:radial-gradient(1200px 800px at 80% -10%, rgba(192,132,252,.15), transparent 60%),
-                         radial-gradient(900px 700px at -10% 20%, rgba(138,180,255,.12), transparent 55%),
-                         var(--bg);
-      line-height:1.65;
+      margin:0;
+      font-family:"Didact Gothic",sans-serif;
+      background:var(--bg);
+      color:var(--txt);
+      line-height:1.6;
     }
-    a{color:var(--brand); text-decoration:none}
+    a{color:#fff;text-decoration:none}
     a:hover{text-decoration:underline}
-    header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg, rgba(11,16,32,.9), rgba(11,16,32,.6));
-      border-bottom:1px solid rgba(255,255,255,.06);
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:32px 20px 80px}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:28px;
+      align-items:center;
+      padding:36px 26px;
+      border:1px solid var(--accent);
+      border-radius:var(--radius);
+      background:#0e0e0e;
     }
-    .container{max-width:1100px; margin:0 auto; padding:0 20px}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
-    .nav a.logo{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px; color:#fff}
-    .nav .links{display:flex; gap:16px; flex-wrap:wrap}
-    .nav .links a{padding:8px 12px; border-radius:10px; font-weight:600; color:#e5e7eb}
-    .nav .links a:hover{background:rgba(255,255,255,.06)}
-
-    .hero{padding:80px 0 30px}
-    .hero h1{
-      font-family:"Playfair Display", serif; font-size:clamp(28px, 4vw, 54px); line-height:1.05; margin:0 0 12px;
-      letter-spacing:.2px; color:#fff;
+    .hero h1{font-size:clamp(32px,5vw,64px);margin:0 0 12px 0}
+    .hero p{margin:0;color:var(--muted)}
+    .portrait img{
+      width:100%;
+      border-radius:var(--radius);
+      border:1px solid var(--accent);
     }
-    .tagline{color:var(--muted); font-size:clamp(14px,2vw,18px)}
-    .grid{
-      display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; padding:16px 0 8px;
-    }
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
-    .fact-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px}
-    .fact{background:var(--bg-soft); border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:12px}
-    .fact b{display:block; color:#fff}
 
-    .section{padding:44px 0}
-    .section h2{font-size:clamp(22px,3vw,32px); margin:0 0 14px; font-weight:800}
-    .lead{color:#d1d5db}
+    section{margin-top:40px;padding:22px;border:1px solid var(--accent);border-radius:var(--radius);background:var(--card)}
+    h2{margin-top:0;font-size:clamp(22px,3vw,30px)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
-    .chip{padding:6px 10px; border-radius:999px; background:rgba(138,180,255,.14); border:1px solid rgba(138,180,255,.3); font-size:13px}
+    figure{margin:0;border:1px solid var(--accent);border-radius:12px;overflow:hidden;background:#111}
+    figure img{width:100%;height:240px;object-fit:cover;display:block}
+    figcaption{padding:10px 12px;font-size:14px;color:var(--muted);border-top:1px solid var(--accent)}
 
-    .timeline{position:relative; margin:6px 0 0; padding-left:18px}
-    .timeline::before{content:""; position:absolute; left:6px; top:0; bottom:0; width:2px; background:linear-gradient(var(--brand), var(--brand-2))}
-    .tl-item{position:relative; margin:16px 0; padding-left:18px}
-    .tl-item::before{content:""; position:absolute; left:-2px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 3px rgba(138,180,255,.25)}
-    .tl-item h3{margin:0 0 4px; font-size:17px}
-    .tl-item p{margin:0; color:#d1d5db}
+    footer{margin-top:40px;border-top:1px dashed var(--accent);padding-top:18px;color:var(--muted);font-size:14px;text-align:center}
 
-    .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
-    .gallery figure{margin:0; overflow:hidden; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:#0f172a}
-    .gallery img{display:block; width:100%; height:220px; object-fit:cover; transition:transform .5s ease}
-    .gallery figure:hover img{transform:scale(1.05)}
-    .gallery figcaption{padding:10px 12px; font-size:14px; color:#d1d5db}
-
-    .quote{font-size:20px; font-style:italic; color:#e5e7eb; border-left:3px solid var(--brand); padding:10px 16px; background:rgba(255,255,255,.03); border-radius:12px}
-
-    footer{border-top:1px solid rgba(255,255,255,.06); margin-top:40px; padding:24px 0; color:var(--muted)}
-
-    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); padding:2px 6px; border-radius:6px}
-
-    @media (max-width: 860px){
-      .grid{grid-template-columns:1fr;}
-    }
+    @media(max-width:880px){.hero{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.grid-3{grid-template-columns:1fr}figure img{height:200px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="logo" href="#">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" stroke="url(#g)" stroke-width="2" />
-          <defs><linearGradient id="g" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#8ab4ff"/><stop offset="1" stop-color="#c084fc"/></linearGradient></defs>
-        </svg>
-        <span>M. K. Čiurlionis</span>
-      </a>
-      <nav class="links">
-        <a href="#apie">Apie</a>
-        <a href="#biografija">Biografija</a>
-        <a href="#kuryba">Kūryba</a>
-        <a href="#galerija">Galerija</a>
-        <a href="#saltiniai">Šaltiniai</a>
-      </nav>
-    </div>
-  </header>
+  <div class="wrap">
 
-  <main class="container">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="grid">
-        <div class="card">
-          <h1>Mikalojus Konstantinas Čiurlionis</h1>
-          <p class="tagline">Lietuvių dailininkas ir kompozitorius, simbolizmo ir modernizmo novatorius, kūręs dailės bei muzikos sintezę.</p>
-
-          <div class="chips" aria-label="Žymos">
-            <span class="chip">dailininkas</span>
-            <span class="chip">kompozitorius</span>
-            <span class="chip">simbolizmas</span>
-            <span class="chip">sinestezija</span>
-          </div>
-        </div>
-
-        <aside class="card" aria-labelledby="faktai-h">
-          <h2 id="faktai-h" style="margin-top:0">Trumpi faktai</h2>
-          <div class="fact-grid">
-            <div class="fact"><b>Gimė</b><span>1875 m. rugsėjo 22 d., Senoji Varėna</span></div>
-            <div class="fact"><b>Mirė</b><span>1911 m. balandžio 10 d., Pustelninkuose (netoli Varšuvos)</span></div>
-            <div class="fact"><b>Palaidotas</b><span>Rasų kapinės, Vilnius</span></div>
-            <div class="fact"><b>Tėvai</b><span>Konstantinas (vargonininkas) ir Adelė (g. Radmanaitė)</span></div>
-            <div class="fact"><b>Sutuoktinė</b><span>Sofija Kymantaitė‑Čiurlionienė (santuoka 1909‑01‑01, Šateikiai)</span></div>
-            <div class="fact"><b>Vaikai</b><span>Danutė Čiurlionytė‑Zubovienė (1910–1995)</span></div>
-            <div class="fact"><b>Veikla</b><span>Dailė, muzika, literatūra, kultūrinė veikla</span></div>
-            <div class="fact"><b>Žymiausi kūriniai</b><span>„Jūra“, „Miške“, ciklai „Zodiakas“, „Pasaulio sutvėrimas“</span></div>
-          </div>
-        </aside>
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h1>Mikalojus Konstantinas Čiurlionis</h1>
+        <p>Lietuvių kompozitorius ir dailininkas (1875–1911). Vienas ryškiausių simbolizmo kūrėjų Vidurio ir Rytų Europoje.</p>
       </div>
-    </section>
+      <div class="portrait">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Mikalojus_Konstantinas_Ciurlionis.jpg"
+             alt="Mikalojus Konstantinas Čiurlionis – portretas">
+      </div>
+    </div>
 
-    <!-- Apie -->
-    <section id="apie" class="section">
+    <!-- APIE -->
+    <section id="apie">
       <h2>Apie</h2>
-      <p class="lead">Čiurlionis – viena ryškiausių Lietuvos kultūros asmenybių. Jo paveikslai, neretai įvardijami „sonatomis“, pasižymi muzikine struktūra, kosminiais vaizdiniais ir simbolių kalba. Kaip kompozitorius jis paliko simfoninių poemų, chorinių bei fortepijoninių kūrinių, kuriuose siekė dailės ir muzikos vienovės.</p>
-      <p>Ugdytas Druskininkuose, mokęsis Varšuvoje ir Leipcige, menininkas aktyviai dalyvavo Lietuvos kultūriniame atgimime, prisidėjo prie profesionaliosios dailės ir muzikos mokyklos kūrimo pamato.</p>
-    </section>
-
-    <!-- Biografija -->
-    <section id="biografija" class="section reveal">
-      <h2>Biografijos bruožai</h2>
-      <div class="timeline" aria-label="Laiko juosta">
-        <div class="tl-item">
-          <h3>1875–1889 · Senoji Varėna → Druskininkai</h3>
-          <p>Gimė vargonininko šeimoje; nuo 1878 m. augo Druskininkuose, anksti ėmė groti vargonais ir fortepijonu – buvo muzikos vunderkindas.</p>
+      <div class="grid-2">
+        <div>
+          <p><strong>Gimė:</strong> 1875 m. rugsėjo 22 d., Senoji Varėna</p>
+          <p><strong>Mirė:</strong> 1911 m. balandžio 10 d., Pustelnikas (netoli Varšuvos)</p>
+          <p><strong>Veikla:</strong> kompozitorius, dailininkas, chorvedys, kultūros veikėjas</p>
         </div>
-        <div class="tl-item">
-          <h3>1889–1893 · Plungės dvaro orkestro mokykla</h3>
-          <p>M. Oginskio stipendija; grojo fleita, koncertavo Žemaitijoje ir Kurše.</p>
-        </div>
-        <div class="tl-item">
-          <h3>1894–1899 · Varšuvos muzikos institutas</h3>
-          <p>Studijavo kompoziciją (Z. Nosko
-
-    <!-- Šeima -->
-    <section id="seima" class="section reveal">
-      <h2>Šeima</h2>
-      <div class="grid" style="align-items:start">
-        <div class="card">
-          <h3>Artimiausi</h3>
-          <ul>
-            <li><b>Tėvas:</b> Konstantinas Čiurlionis (1851–1914) – vargonininkas, chorvedys.</li>
-            <li><b>Motina:</b> Adelė Čiurlionienė (Radmanaitė, 1854–1919).</li>
-            <li><b>Sutuoktinė:</b> <a href="#saltiniai">Sofija Kymantaitė‑Čiurlionienė</a> – rašytoja, pedagogė, kultūros veikėja.</li>
-            <li><b>Duktė:</b> Danutė Čiurlionytė‑Zubovienė (1910–1995) – rašytoja, vertėja.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Seserys ir broliai</h3>
-          <p>Čiurlioniai augino gausią šeimą – iš viso devyni vaikai. Be Mikalojaus Konstantino, dar: Marija, Juzė, Povilas, Stasys, Petras, Jonas, Valerija ir Jadvyga.</p>
-          <p class="lead">Daugelis artimųjų prisiminimuose paliko gyvą kūrėjo portretą ir saugojo palikimą.</p>
+        <div>
+          <p><strong>Muzika:</strong> simfoninės poemos <em>„Miške“</em>, <em>„Jūra“</em>, uvertiūra <em>„Kęstutis“</em>, fortepijono ciklai, liaudies dainų harmonizacijos.</p>
+          <p><strong>Dailė:</strong> simbolizmo ir neoromantizmo kryptys; ciklinės kompozicijos, sonatos, preliudai ir fugos tapyboje.</p>
         </div>
       </div>
+      <p style="margin-top:14px;color:#bdbdbd">
+        Čiurlionis paliko daugiau nei 400 muzikos kūrinių ir apie 300 tapybos darbų. Jo kūryboje susilieja muzika ir dailė, jis laikomas sinestezijos reiškinio pavyzdžiu. 
+        Po mirties jo darbai įkvėpė daugybę Lietuvos ir užsienio menininkų.
+      </p>
     </section>
 
-    <!-- Kūryba -->
-    <section id="kuryba" class="section">
-      <h2>Kūryba</h2>
-      <div class="grid" style="align-items:start">
-        <div class="card">
-          <h3 style="margin-top:4px">Dailė</h3>
-          <ul>
-            <li>Ciklinė forma („sonatos“, „preliudai“, „fugos“) dailėje.</li>
-            <li>Simbolizmo ir art nouveau motyvai, kosminės ir mitologinės temos.</li>
-            <li>Spalvų ir šviesos muzikalumas, ritminės kompozicijos.</li>
-          </ul>
-          <h3>Muzika</h3>
-          <ul>
-            <li>Simfoninės poemos <em>„Miške“</em> ir <em>„Jūra“</em>.</li>
-            <li>Fortepijoniniai ciklai, chorai ir dainos.</li>
-            <li>Liaudies intonacijų ir modernių harmonijų dermė.</li>
-          </ul>
-          <div class="quote" aria-label="Citata">„Aš noriu atverti spindinčius pasaulius.“</div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:4px">Temos ir simboliai</h3>
-          <p>Dangus ir jūra, kelias ir kalnas, bokštai ir miestai, angelai, zodiako ženklai, pasaulio sutvėrimo etapai – tai jo vaizdinių žodynas. Dailės ir muzikos sąsajos pasireiškia pavadinimuose ir kompozicijoje.</p>
-          <h3>Palikimas</h3>
-          <p>Čiurlionio vardu pavadinta nacionalinė dailės muziejaus filialas Kaune, mokykla, konkursai; kūryba dažnai eksponuojama tarptautinėse parodose.</p>
-        </div>
-      </div>
-    </section>
+<!-- GALERIJA --> <section id="galerija"> <h2>Galerija</h2> <div class="grid-3"> <figure> <img src="https://storage.googleapis.com/museum-data-prod/large-e411473b-ec05-4771-8d7c-3c759c49ef22.jpg" alt="Jūros sonata: Andante (1908)" /> <figcaption>Andante</figcaption> </figure> <figure> <img src="https://storage.googleapis.com/museum-data-prod/medium-0aa2ecb1-8c4e-4999-b647-ca6a2e69ebbb.jpg" alt="Jūros sonata: Allegro (1908)" /> <figcaption>Allegro</figcaption> </figure> <figure> <img src="https://ciurlionis.licejus.lt/Tapyba/Muz/Sonatos/Juros_sonata.Andante.jpg" alt="Jūros sonata: Finale (1908)" /> <figcaption>Finale</figcaption> </figure> </div> <p style="color:#bdbdbd;margin-top:12px">Pastaba: ciklas planuotas iš keturių dalių, baigtos trys.</p> </section>
 
-    <!-- Galerija (vietoj tikrų paveikslų – vietos laikiniems paveikslėliams) -->
-    <section id="galerija" class="section">
-      <h2>Galerija (pavyzdžiai)</h2>
-      <p class="lead">Pakeiskite paveikslėlių <span class="kbd">src</span> laukus į tikrų darbų atvaizdus (daugelis yra viešojoje erdvėje / public domain).</p>
-      <div class="gallery">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop" alt="Simbolinė nakties kompozicija" loading="lazy" />
-          <figcaption>„Jūros sonata“ (iliustracinė nuotrauka)</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Banguojanti jūra" loading="lazy" />
-          <figcaption>„Jūra“ – simfoninė poemos dvasia</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Kosminiai motyvai" loading="lazy" />
-          <figcaption>„Zodiakas“ – ciklo nuotaika</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1526405150638-9ae7b9d0b1d5?q=80&w=1200&auto=format&fit=crop" alt="Miško pasaka" loading="lazy" />
-          <figcaption>„Miško pasaka“ – pasakų ir gamtos sintezė</figcaption>
-        </figure>
-      </div>
-    </section>
+    <!-- ŠALTINIAI -->
+    <footer>
+      <p><strong>Šaltiniai:</strong>
+        <a href="https://lt.wikipedia.org/wiki/Mikalojus_Konstantinas_%C4%8Ciurlionis" target="_blank">Vikipedija (LT)</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Mikalojus_Konstantinas_Ciurlionis.jpg" target="_blank">Wikimedia Commons</a>
+      </p>
+      <p style="margin-top:10px">Credits: <strong>Benita ir Armandas</strong></p>
+    </footer>
 
-    <!-- Naudojimas -->
-    <section class="section" id="naudojimas">
-      <h2>Kaip pritaikyti šį šabloną</h2>
-      <ol>
-        <li>Pakeiskite galerijos paveikslėlius tikrais darbais ir jų pavadinimais.</li>
-        <li>Jei reikia, papildykite biografiją tikslesnėmis datomis ir citatomis.</li>
-        <li>Pridėkite skyrių apie parodas ar diskografiją.</li>
-      </ol>
-      <p>Patarimas: greitai pereiti tarp skyrių galite paspausdami <span class="kbd">Alt</span> + <span class="kbd">↑/↓</span> (arba spauskite meniu nuorodas).</p>
-    </section>
-
-    <!-- Šaltiniai -->
-    <section id="saltiniai" class="section">
-      <h2>Šaltiniai</h2>
-      <ul>
-        <li>Vikipedija: <a href="https://lt.wikipedia.org/wiki/Mikalojus_Konstantinas_%C4%8Ciurlionis" rel="noopener">Mikalojus Konstantinas Čiurlionis</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      Parengta viename faile. Autorius: jūsų vardas. Šablonas laisvai keistinas.
-    </div>
-  </footer>
-
-  <script>
-    // Maža patogi funkcija: sklandus slinkimas ir aktyvi nuoroda meniu
-    const links = document.querySelectorAll('header nav a[href^="#"]');
-    const setActive = id => links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
-    links.forEach(a => a.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-    }));
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if(entry.isIntersecting){ setActive(entry.target.id); } });
-    }, {rootMargin:"-40% 0px -50% 0px", threshold:0.01});
-    document.querySelectorAll('main .section, .hero').forEach(s => obs.observe(s));
-  </script>
+  </div>
 </body>
 </html>
